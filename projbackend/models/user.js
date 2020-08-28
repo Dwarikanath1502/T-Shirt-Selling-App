@@ -52,14 +52,14 @@ userSchema.virtual("password")
     })
 
 
-userSchema.method = {
+userSchema.methods = {
 
     authenticate: function(plainPassword){
         return this.securePassword(plainPassword) === this.encry_password
     },
     
     securePassword: function(plainPassword){
-        if(!password)
+        if(!plainPassword)
             return "";
         try {
             return crypto

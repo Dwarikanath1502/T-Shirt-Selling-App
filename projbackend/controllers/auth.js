@@ -7,7 +7,7 @@ exports.signup = (req , res) =>{
         if (err) {
             return res.status(400).json({
                 err: "NOT able to save user in Database"
-            })
+            });
         }
         res.json({
             name: user.name,

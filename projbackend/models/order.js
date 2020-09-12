@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose')
 const {ObjectId} = mongoose.Schema;
 
@@ -11,7 +12,7 @@ const ProductCartSchema = new mongoose.Schema({
         price: Number
         
     })
-const ProductCart = mongoose.model("ProductCart",orderSchema)
+const ProductCart = mongoose.model("ProductCart",ProductCartSchema)
 
 const orderSchema = new mongoose.Schema({
     products: [ProductCartSchema],

@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-//my Routes
+//My routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 const categoryRoutes = require("./routes/category");
@@ -36,8 +36,8 @@ app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 
 //PORT
-const port = process.env.PORT || 8000; 
- 
+const port = process.env.PORT || 8000;
+
 //Starting a server
 app.listen(port, () => {
   console.log(`app is running at ${port}`);

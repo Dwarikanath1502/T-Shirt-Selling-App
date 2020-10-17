@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
@@ -24,8 +23,8 @@ const Signup = () => {
     setValues({ ...values, error: false });
     signup({ name, email, password })
       .then(data => {
-        if (data?.error) {
-          setValues({ ...values, error: data?.error, success: false });
+        if (data && data.error) {
+          setValues({ ...values, error: data.error, success: false });
         } else {
           setValues({
             ...values,
@@ -37,7 +36,7 @@ const Signup = () => {
           });
         }
       })
-      .catch(()=>console.log("Error in signup"));
+      .catch(console.log("Error in signup"));
   };
 
   const signUpForm = () => {
@@ -90,7 +89,7 @@ const Signup = () => {
             className="alert alert-success"
             style={{ display: success ? "" : "none" }}
           >
-            New account was created successfully. Please{" "}
+            New account was created successfully. Please
             <Link to="/signin">Login Here</Link>
           </div>
         </div>
